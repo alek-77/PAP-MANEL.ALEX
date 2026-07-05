@@ -1,0 +1,728 @@
+fileFormatVersion: 2
+guid: 738196a0fa51f984cb8bb7ab096113d4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5915474249183410699
+    second: Blocostop_0
+  - first:
+      213: 4016223376260617804
+    second: Blocostop_1
+  - first:
+      213: 1999401900118527394
+    second: Blocostop_2
+  - first:
+      213: -4874049705269169083
+    second: Blocostop_3
+  - first:
+      213: 8463825665762684179
+    second: Blocostop_4
+  - first:
+      213: 411618762979521764
+    second: Blocostop_5
+  - first:
+      213: -9072546882488757214
+    second: Blocostop_6
+  - first:
+      213: -6204146869817070870
+    second: Blocostop_7
+  - first:
+      213: -8864875880697239515
+    second: Blocostop_8
+  - first:
+      213: 960883544048034586
+    second: Blocostop_9
+  - first:
+      213: 5343672985051562975
+    second: Blocostop_10
+  - first:
+      213: -8423007828839642891
+    second: Blocostop_11
+  - first:
+      213: 9149817859877325096
+    second: Blocostop_12
+  - first:
+      213: 4390747564873245991
+    second: Blocostop_13
+  - first:
+      213: -2638030864921773548
+    second: Blocostop_14
+  - first:
+      213: 637091421121470339
+    second: Blocostop_15
+  - first:
+      213: -4197780218829344361
+    second: Blocostop_16
+  - first:
+      213: -1429558656610239401
+    second: Blocostop_17
+  - first:
+      213: 1146384679057879384
+    second: Blocostop_18
+  - first:
+      213: -6931625390979837940
+    second: Blocostop_19
+  - first:
+      213: -8180117280187288765
+    second: Blocostop_20
+  - first:
+      213: 3926010047422499775
+    second: Blocostop_21
+  - first:
+      213: 5251900207262157037
+    second: Blocostop_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Blocostop_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 349
+        width: 102
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0a3c84fc7cf71250800000000000000
+      internalID: 5915474249183410699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 352
+        width: 146
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4652a0c1ed7cb730800000000000000
+      internalID: 4016223376260617804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_2
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 350
+        width: 95
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ad4ec35f6d4fbb10800000000000000
+      internalID: 1999401900118527394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_3
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 257
+        width: 71
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54475dbed95eb5cb0800000000000000
+      internalID: -4874049705269169083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_4
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 257
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31d6e98899c857570800000000000000
+      internalID: 8463825665762684179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_5
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 257
+        width: 69
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e4b746851d56b500800000000000000
+      internalID: 411618762979521764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_6
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 257
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2241e25cda6d71280800000000000000
+      internalID: -9072546882488757214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_7
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 257
+        width: 69
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeaa33afa4176e9a0800000000000000
+      internalID: -6204146869817070870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_8
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 172
+        width: 92
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 528ec19ca52a9f480800000000000000
+      internalID: -8864875880697239515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_9
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 173
+        width: 89
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1360890e7eb55d00800000000000000
+      internalID: 960883544048034586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_10
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 170
+        width: 76
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd389d5944a882a40800000000000000
+      internalID: 5343672985051562975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_11
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 170
+        width: 76
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f8cda5b1077b1b80800000000000000
+      internalID: -8423007828839642891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_12
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 85
+        width: 36
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8294381addeaafe70800000000000000
+      internalID: 9149817859877325096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_13
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 85
+        width: 44
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7256ea6a5a11fec30800000000000000
+      internalID: 4390747564873245991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_14
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 85
+        width: 45
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41a32ddb7e4d36bd0800000000000000
+      internalID: -2638030864921773548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_15
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 85
+        width: 49
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38fd465a54767d800800000000000000
+      internalID: 637091421121470339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_16
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 25
+        width: 74
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 791f38bb12d7eb5c0800000000000000
+      internalID: -4197780218829344361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_17
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 25
+        width: 79
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75c7927d9ff292ce0800000000000000
+      internalID: -1429558656610239401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_18
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 13
+        width: 84
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 851f133bac6c8ef00800000000000000
+      internalID: 1146384679057879384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_19
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 14
+        width: 89
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c009196ae6bedcf90800000000000000
+      internalID: -6931625390979837940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_20
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 2
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 343f66d7ca26a7e80800000000000000
+      internalID: -8180117280187288765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_21
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 12
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbb8b35565dfb7630800000000000000
+      internalID: 3926010047422499775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blocostop_22
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 7
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de849a9a96f72e840800000000000000
+      internalID: 5251900207262157037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Blocostop_0: 5915474249183410699
+      Blocostop_1: 4016223376260617804
+      Blocostop_10: 5343672985051562975
+      Blocostop_11: -8423007828839642891
+      Blocostop_12: 9149817859877325096
+      Blocostop_13: 4390747564873245991
+      Blocostop_14: -2638030864921773548
+      Blocostop_15: 637091421121470339
+      Blocostop_16: -4197780218829344361
+      Blocostop_17: -1429558656610239401
+      Blocostop_18: 1146384679057879384
+      Blocostop_19: -6931625390979837940
+      Blocostop_2: 1999401900118527394
+      Blocostop_20: -8180117280187288765
+      Blocostop_21: 3926010047422499775
+      Blocostop_22: 5251900207262157037
+      Blocostop_3: -4874049705269169083
+      Blocostop_4: 8463825665762684179
+      Blocostop_5: 411618762979521764
+      Blocostop_6: -9072546882488757214
+      Blocostop_7: -6204146869817070870
+      Blocostop_8: -8864875880697239515
+      Blocostop_9: 960883544048034586
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

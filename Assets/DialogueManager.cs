@@ -1,18 +1,22 @@
-using System.Collections; //Biblioteca usada para usar Coroutines (IEnumerator)
-using UnityEngine;  //Biblioteca usada para acessar componentes do Unity
-using TMPro;    //Biblioteca dedicada para o TextMeshPro, que é uma ferramenta de renderização de texto avançada no Unity
-using UnityEngine.UI;  //Biblioteca usada para acessar componentes de UI do Unity, como botões e textos
+using System.Collections;
+using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class DialogueLine
 {
     [TextArea(3, 10)]
     public string text;
+
     public bool hasChoices;
+
     public string choice1Text;
     public string choice2Text;
+
     public int nextLineIfChoice1;
     public int nextLineIfChoice2;
+
     public bool endDialogueAfterThis;
     public int nextLine;
 }
@@ -54,11 +58,14 @@ public class DialogueManager : MonoBehaviour
         if (choicesContainer != null)
             choicesContainer.SetActive(false);
 
-        StartDialogue();
+        dialoguePanel.SetActive(false);
     }
 
     void Update()
     {
+        if (!dialoguePanel.activeSelf)
+            return;
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (isTyping)
@@ -114,7 +121,8 @@ public class DialogueManager : MonoBehaviour
         if (!conversation[currentLineIndex].hasChoices)
             return;
 
-        choicesContainer.SetActive(true);
+        if (choicesContainer != null)
+            choicesContainer.SetActive(true);
 
         choice1Text.text = conversation[currentLineIndex].choice1Text;
         choice2Text.text = conversation[currentLineIndex].choice2Text;
@@ -127,7 +135,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (conversation[currentLineIndex].endDialogueAfterThis)
         {
-            dialoguePanel.SetActive(false);
+            EndDialogue();
             return;
         }
 
@@ -136,21 +144,43 @@ public class DialogueManager : MonoBehaviour
         if (currentLineIndex >= 0 && currentLineIndex < conversation.Length)
             StartCoroutine(TypeLine());
         else
-            dialoguePanel.SetActive(false);
+            EndDialogue();
     }
 
     public void MakeChoice(int choice)
     {
-        choicesContainer.SetActive(false);
+        if (choicesContainer != null)
+            choicesContainer.SetActive(false);
 
-        if (choice == 1)
-            currentLineIndex = conversation[currentLineIndex].nextLineIfChoice1;
-        else
-            currentLineIndex = conversation[currentLineIndex].nextLineIfChoice2;
+        int nextIndex = (choice == 1)
+            ? conversation[currentLineIndex].nextLineIfChoice1
+            : conversation[currentLineIndex].nextLineIfChoice2;
+
+        // Se o próximo índice for -1, fecha o diálogo
+        if (nextIndex == -1)
+        {
+            EndDialogue();
+            return;
+        }
+
+        currentLineIndex = nextIndex;
 
         if (currentLineIndex >= 0 && currentLineIndex < conversation.Length)
             StartCoroutine(TypeLine());
         else
-            dialoguePanel.SetActive(false);
+            EndDialogue();
+    }
+
+    void EndDialogue()
+    {
+        StopAllCoroutines();
+
+        if (choicesContainer != null)
+            choicesContainer.SetActive(false);
+
+        dialoguePanel.SetActive(false);
+
+        isTyping = false;
+        currentLineIndex = 0;
     }
 }
