@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class EnemyHitResponse : MonoBehaviour
 {
+    // Controla o empurrao e o flash visual quando o inimigo leva dano.
     [Header("Knockback")]
     public float forcaKnockback = 5f;
     public float duracaoKnockback = 0.15f;
@@ -21,6 +22,7 @@ public class EnemyHitResponse : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>(true);
 
+        // Guarda as cores iniciais para as repor depois do flash.
         coresOriginais = new Color[spriteRenderers.Length];
         for (int i = 0; i < spriteRenderers.Length; i++)
             coresOriginais[i] = spriteRenderers[i].color;
@@ -28,6 +30,7 @@ public class EnemyHitResponse : MonoBehaviour
 
     public void ReagirAoHit(Vector2 origemAtaque)
     {
+        // A direcao aponta para longe da origem do ataque.
         Vector2 direcao = ((Vector2)transform.position - origemAtaque).normalized;
 
         if (rb != null)
@@ -40,6 +43,7 @@ public class EnemyHitResponse : MonoBehaviour
     IEnumerator AplicarKnockback(Vector2 direcao)
     {
         emKnockback = true;
+        // Durante este tempo, a IA consulta EstaEmKnockback() e pausa o movimento normal.
         rb.linearVelocity = direcao * forcaKnockback;
         yield return new WaitForSeconds(duracaoKnockback);
         emKnockback = false;

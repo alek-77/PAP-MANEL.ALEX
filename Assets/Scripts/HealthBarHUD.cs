@@ -12,6 +12,7 @@ public class HealthBarHUD : MonoBehaviour
 
     private void Start()
     {
+        // Se a referencia nao estiver ligada no Inspector, tenta encontrar o jogador pela tag.
         if (playerHealth == null)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -25,6 +26,7 @@ public class HealthBarHUD : MonoBehaviour
 
         if (playerHealth != null)
         {
+            // Subscreve o evento para atualizar a barra sempre que a vida mudar.
             playerHealth.AoAlterarVida += AtualizarVida;
             AtualizarVida(playerHealth.vidaAtual, playerHealth.vidaMaxima);
         }
@@ -34,6 +36,7 @@ public class HealthBarHUD : MonoBehaviour
     {
         if (playerHealth != null)
         {
+            // Remove a subscricao para evitar chamadas para um objeto destruido.
             playerHealth.AoAlterarVida -= AtualizarVida;
         }
     }
@@ -47,6 +50,7 @@ public class HealthBarHUD : MonoBehaviour
 
         int hp = Mathf.Clamp(vidaAtual, 0, vidaMaxima);
 
+        // Converte a percentagem de vida num indice do array de sprites.
         float percentagemVida = vidaMaxima > 0 ? hp / (float)vidaMaxima : 0f;
         int index = Mathf.CeilToInt(percentagemVida * (healthSprites.Length - 1));
         index = Mathf.Clamp(index, 0, healthSprites.Length - 1);

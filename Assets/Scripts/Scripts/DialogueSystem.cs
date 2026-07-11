@@ -5,6 +5,7 @@ using System.Collections;
 
 public class DialogueSystem : MonoBehaviour
 {
+    // Singleton simples para os NPCs iniciarem dialogos.
     public static DialogueSystem Instance;
 
     [Header("UI")]
@@ -12,7 +13,7 @@ public class DialogueSystem : MonoBehaviour
     public Text speakerName;
     public Text dialogueText;
 
-    [Header("Settings")]
+    [Header("Definicoes")]
     public float typingSpeed = 0.04f;
 
     private string[] currentLines;
@@ -24,6 +25,7 @@ public class DialogueSystem : MonoBehaviour
 
     public void StartDialogue(string speaker, string[] lines)
     {
+        // Mostra a caixa, guarda as falas atuais e comeca pela primeira linha.
         dialogueBox.SetActive(true);
         speakerName.text = speaker;
         currentLines = lines;
@@ -40,12 +42,14 @@ public class DialogueSystem : MonoBehaviour
         {
             if (isTyping)
             {
+                // Se ainda esta a escrever, mostra logo a linha completa.
                 StopAllCoroutines();
                 dialogueText.text = currentLines[currentIndex];
                 isTyping = false;
             }
             else
             {
+                // Se a linha ja acabou, avanca para a proxima ou termina o dialogo.
                 currentIndex++;
                 if (currentIndex >= currentLines.Length)
                     EndDialogue();
@@ -57,6 +61,7 @@ public class DialogueSystem : MonoBehaviour
 
     IEnumerator TypeLine(string line)
     {
+        // Escreve a fala letra a letra para criar efeito de maquina de escrever.
         isTyping = true;
         dialogueText.text = "";
         foreach (char c in line)
@@ -69,6 +74,7 @@ public class DialogueSystem : MonoBehaviour
 
     void EndDialogue()
     {
+        // Fecha a caixa e marca o dialogo como inativo.
         dialogueActive = false;
         dialogueBox.SetActive(false);
     }

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    // Estados principais do inimigo terrestre.
     public enum Estado { Patrulha, Perseguicao, Ataque, Morto }
     public Estado estadoAtual = Estado.Patrulha;
 
@@ -38,6 +39,7 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
+        // Guarda referencias usadas muitas vezes durante o jogo.
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>(true);
@@ -46,6 +48,7 @@ public class EnemyAI : MonoBehaviour
         GameObject obj = GameObject.FindGameObjectWithTag("Player");
         if (obj != null)
         {
+            // A vida pode estar no proprio jogador, num pai ou num filho.
             healthJogador = EncontrarComponenteNoPlayer<Health>(obj);
             jogador = healthJogador != null ? healthJogador.transform : obj.transform;
         }
@@ -56,6 +59,7 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         if (estadoAtual == Estado.Morto) return;
+        // Enquanto esta em knockback, deixa a fisica do impacto controlar o movimento.
         if (hitResponse != null && hitResponse.EstaEmKnockback()) return;
         if (JogadorMorto())
         {
@@ -90,6 +94,7 @@ public class EnemyAI : MonoBehaviour
 
         float distancia = Vector2.Distance(transform.position, jogador.position);
 
+        // Escolhe o comportamento conforme a distancia ao jogador.
         if (distancia <= raioAtaque)
             estadoAtual = Estado.Ataque;
         else if (distancia <= raioVisao)
@@ -102,6 +107,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (pontoPatrulhaA == null || pontoPatrulhaB == null)
         {
+            // Sem pontos de patrulha definidos, o inimigo fica parado.
             PararMovimento();
             return;
         }
@@ -112,6 +118,7 @@ public class EnemyAI : MonoBehaviour
         MoverPara(destino.position, velocidadePatrulha);
 
         if (Mathf.Abs(transform.position.x - destino.position.x) <= toleranciaPontoPatrulha)
+            // Ao chegar a um ponto, muda para o outro.
             destino = (destino == pontoPatrulhaA) ? pontoPatrulhaB : pontoPatrulhaA;
     }
 
@@ -140,6 +147,7 @@ public class EnemyAI : MonoBehaviour
 
         if (Time.time < tempoUltimoAtaque + cooldownAtaque) return;
 
+        // Aplica dano e feedback apenas quando o cooldown permite novo ataque.
         tempoUltimoAtaque = Time.time;
         if (AnimatorPronto())
             anim.SetTrigger(AnimAtaque);
@@ -161,6 +169,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (rb == null) return;
 
+        // Este inimigo move-se so no eixo X, mantendo a velocidade vertical da fisica.
         float diferencaX = alvo.x - transform.position.x;
         float direcaoX = Mathf.Abs(diferencaX) <= toleranciaPontoPatrulha ? 0f : Mathf.Sign(diferencaX);
         rb.linearVelocity = new Vector2(direcaoX * velocidade, rb.linearVelocity.y);
@@ -196,6 +205,7 @@ public class EnemyAI : MonoBehaviour
     {
         estadoAtual = Estado.Morto;
 
+        // Congela o inimigo morto para nao continuar a interagir com o jogador.
         if (rb != null)
         {
             rb.linearVelocity = Vector2.zero;
@@ -214,6 +224,7 @@ public class EnemyAI : MonoBehaviour
         foreach (Collider2D collider in GetComponentsInChildren<Collider2D>())
             collider.enabled = false;
 
+        // Da tempo para a animacao de morte tocar antes de remover o objeto.
         Destroy(gameObject, 1.5f);
     }
 
@@ -241,6 +252,7 @@ public class EnemyAI : MonoBehaviour
 
     private T EncontrarComponenteNoPlayer<T>(GameObject playerObject) where T : Component
     {
+        // Procura de forma flexivel porque os componentes podem estar em niveis diferentes da hierarquia.
         T componente = playerObject.GetComponent<T>();
         if (componente != null) return componente;
 

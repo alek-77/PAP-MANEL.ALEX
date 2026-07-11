@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class EnemyVoadorAI : MonoBehaviour
 {
+    // Inimigo voador simples: patrulha horizontalmente e causa dano por contacto.
     public enum Estado { Patrulha, Morto }
     public Estado estadoAtual = Estado.Patrulha;
 
@@ -44,6 +45,7 @@ public class EnemyVoadorAI : MonoBehaviour
 
     void Start()
     {
+        // Prepara referencias e desativa a gravidade enquanto o inimigo esta vivo.
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>(true);
@@ -62,6 +64,7 @@ public class EnemyVoadorAI : MonoBehaviour
     void Update()
     {
         if (estadoAtual == Estado.Morto) return;
+        // Durante o knockback, a patrulha fica pausada.
         if (hitResponse != null && hitResponse.EstaEmKnockback()) return;
 
         FazerPatrulha();
@@ -77,12 +80,14 @@ public class EnemyVoadorAI : MonoBehaviour
         MoverPara(alvo, velocidadePatrulha);
 
         if (Mathf.Abs(transform.position.x - destino.x) <= toleranciaPontoPatrulha)
+            // Quando chega ao extremo da patrulha, troca de direcao.
             irParaPontoB = !irParaPontoB;
     }
 
     void DarDanoAoJogador(GameObject playerObject)
     {
         if (estadoAtual == Estado.Morto) return;
+        // Evita dano repetido no mesmo contacto e respeita o cooldown global.
         if (playerEncostado) return;
         if (Time.time < tempoUltimoDano + cooldownDano) return;
 
@@ -93,6 +98,7 @@ public class EnemyVoadorAI : MonoBehaviour
         tempoUltimoDano = Time.time;
         if (AnimatorPronto())
         {
+            // Toca o ataque e depois regressa ao estado visual de voo.
             anim.ResetTrigger(AnimAtaque);
             anim.SetTrigger(AnimAtaque);
 
@@ -118,6 +124,7 @@ public class EnemyVoadorAI : MonoBehaviour
     {
         if (rb == null)
         {
+            // Alternativa caso o objeto nao tenha Rigidbody2D.
             transform.position = Vector2.MoveTowards(transform.position, alvo, velocidade * Time.deltaTime);
             if (AnimatorPronto())
                 anim.SetFloat(AnimVelocidade, velocidade);
@@ -147,6 +154,7 @@ public class EnemyVoadorAI : MonoBehaviour
 
     Vector2 ObterPontoPatrulhaA()
     {
+        // Usa o ponto definido no Inspector; se nao existir, cria um ponto automatico.
         if (pontoPatrulhaA != null)
             return pontoPatrulhaA.position;
 
@@ -155,6 +163,7 @@ public class EnemyVoadorAI : MonoBehaviour
 
     Vector2 ObterPontoPatrulhaB()
     {
+        // Usa o ponto definido no Inspector; se nao existir, cria um ponto automatico.
         if (pontoPatrulhaB != null)
             return pontoPatrulhaB.position;
 
@@ -190,6 +199,7 @@ public class EnemyVoadorAI : MonoBehaviour
 
         if (rb != null)
         {
+            // Ao morrer, volta a sofrer gravidade para cair.
             rb.linearVelocity = Vector2.zero;
             rb.angularVelocity = 0f;
             rb.bodyType = RigidbodyType2D.Dynamic;
@@ -245,11 +255,13 @@ public class EnemyVoadorAI : MonoBehaviour
         anim.ResetTrigger(AnimAtaque);
 
         if (!string.IsNullOrEmpty(estadoFly))
+            // CrossFade evita uma transicao brusca de volta ao voo.
             anim.CrossFade(estadoFly, 0.05f);
     }
 
     T EncontrarComponenteNoPlayer<T>(GameObject playerObject) where T : Component
     {
+        // Procura no objeto, no pai e nos filhos para suportar varias hierarquias do jogador.
         T componente = playerObject.GetComponent<T>();
         if (componente != null) return componente;
 
@@ -261,6 +273,7 @@ public class EnemyVoadorAI : MonoBehaviour
 
     bool ObjetoDoPlayer(GameObject obj)
     {
+        // Nem sempre o collider atingido e o GameObject principal do jogador.
         return obj.CompareTag("Player")
             || obj.GetComponentInParent<PlayerController>() != null
             || obj.GetComponentInParent<PlayerDeath>() != null;
@@ -281,6 +294,7 @@ public class EnemyVoadorAI : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
+        // Desenha a linha de patrulha no editor para facilitar o ajuste do nivel.
         Vector2 centro = Application.isPlaying ? posicaoInicial : (Vector2)transform.position;
         Vector2 pontoA = pontoPatrulhaA != null
             ? (Vector2)pontoPatrulhaA.position

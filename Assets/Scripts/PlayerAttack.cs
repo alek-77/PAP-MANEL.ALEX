@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    // Ataque corpo a corpo do jogador, feito a partir de um ponto e um raio.
     [Header("Ataque")]
     public int dano = 25;
     public float alcanceAtaque = 1.5f;
     public float cooldown = 0.4f;
 
-    [Header("Referências")]
+    [Header("Referencias")]
     public Transform pontoAtaque;
     public LayerMask layerInimigos;
 
@@ -22,7 +23,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-        // Ataque com J ou botão de ataque
+        // Ataque com a tecla J, respeitando o tempo de cooldown.
         if (Input.GetKeyDown(KeyCode.J) && Time.time >= tempoUltimoAtaque + cooldown)
         {
             Atacar();
@@ -37,11 +38,12 @@ public class PlayerAttack : MonoBehaviour
         if (AnimatorPronto())
             anim.SetTrigger("Ataque");
 
-        // Detetar inimigos no raio de ataque
+        // Deteta todos os colliders inimigos dentro do raio de ataque.
         Collider2D[] inimigosAtingidos = Physics2D.OverlapCircleAll(
             pontoAtaque.position, alcanceAtaque, layerInimigos
         );
 
+        // Evita dar dano duas vezes ao mesmo inimigo se ele tiver varios colliders.
         HashSet<Health> inimigosJaAtingidos = new HashSet<Health>();
 
         foreach (Collider2D inimigo in inimigosAtingidos)
@@ -57,11 +59,12 @@ public class PlayerAttack : MonoBehaviour
                 resposta = inimigo.GetComponentInParent<EnemyHitResponse>();
 
             if (resposta != null)
+                // Aplica knockback e flash visual ao inimigo atingido.
                 resposta.ReagirAoHit(transform.position);
         }
     }
 
-    // Visualizar o raio de ataque no editor
+    // Visualiza o raio de ataque no editor.
     void OnDrawGizmosSelected()
     {
         if (pontoAtaque == null) return;
